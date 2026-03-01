@@ -71,7 +71,7 @@ function App() {
         </>
        }/>
 
-       <Route path="/card" element={
+       <Route path="/card/:id" element={
          <>
            <Header/>
            <CardActive/>
@@ -119,7 +119,7 @@ function App() {
         </>
        }/>
 
-       <Route path="/biographie" element={
+       <Route path="/biographie/:id" element={
         <>
           <Header/>
           <ExploreHeader/>
@@ -157,7 +157,7 @@ function App() {
         </>
        }/>
 
-       <Route path="/event" element={
+       <Route path="/event/:id" element={
          <>
             <Header/>
             <ExploreHeader/>

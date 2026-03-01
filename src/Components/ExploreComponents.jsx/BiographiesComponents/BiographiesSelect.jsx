@@ -18,7 +18,7 @@ const BiographiesSelect = ()=>{
 
                     return(
 
-                        <Link onClick={()=> setBiographie(prev => b)} to="/biographie">
+                        <Link to={`/biographie/${b.id}`}>
                         <div key={b.id} className="flex flex-col justify-center items-center gap-2 bg-gray-200 p-5 rounded-[50%] h-[200px] w-[200px] cursor-pointer transition-opacity duration-300 hover:opacity-70 active:opacity-50">
 
                           

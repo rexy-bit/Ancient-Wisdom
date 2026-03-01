@@ -1,6 +1,6 @@
 export default {
     Greece : {
-        
+        id : 1,
         title : 'Ancient Greece from Troy to Alexander',
         description : "Dive into the world of ancient history with this interactive quiz covering the Trojan War, Greek mythology, the Battle of Thermopylae, and Alexander the Great. Challenge yourself, learn fascinating facts, and track your score as you progress through each question.",
         quiz : [
@@ -107,6 +107,7 @@ export default {
         ]
     },
     Rome : {
+        id : 2,
         title : 'Roman Empire Quiz',
         description : "Step into the grandeur of the Roman Empire with this interactive quiz exploring legendary emperors, epic battles, monumental architecture, and pivotal events that shaped history. Test your knowledge, uncover fascinating stories, and see how much you truly know about one of the greatest civilizations the world has ever known.",
         quiz: [
@@ -215,6 +216,7 @@ export default {
     },
     
     History: {
+        id  : 3,
     title: 'World History Quiz',
     description: "Test your knowledge of world history with this interactive quiz covering major events, famous leaders, and legendary civilizations. Challenge yourself, learn fascinating facts, and see how well you know the past!",
     quiz: [
@@ -322,6 +324,7 @@ export default {
 },
 
     Crusades: {
+        id  : 4,
         title: "The Crusades and Medieval Conflicts",
         description: "Explore the era of the Crusades, the struggles for Jerusalem, the rise of Saladin, and the medieval knights. Test your knowledge of this fascinating period of history!",
         quiz: [
@@ -427,6 +430,7 @@ export default {
             }
         ]
     },Egypt : {
+        id  : 5,
     title: "Ancient Egypt Quiz",
     description: "Test your knowledge of Ancient Egypt! Explore the world of pharaohs, pyramids, gods, and incredible achievements of one of the most fascinating civilizations in history.",
     quiz: [
@@ -532,6 +536,7 @@ export default {
         }
     ]
 },Vikings : {
+    id  : 6,
     title: "Vikings & Scandinavia Quiz",
     description: "Test your knowledge of the Vikings and Scandinavian history! Explore the world of Norse gods, legendary raids, ships, and the rich culture of the Viking Age.",
     quiz: [
@@ -637,6 +642,7 @@ export default {
         }
     ]
 },OttomanEmpire : {
+    id  : 7,
     title: "Ottoman Empire Quiz",
     description: "Explore the rich history of the Ottoman Empire! Test your knowledge about sultans, battles, architecture, and the vast influence of this empire across three continents.",
     quiz: [
@@ -742,6 +748,7 @@ export default {
         }
     ]
 },MedievalEurope : {
+    id  : 8,
     title: "Medieval Europe Quiz",
     description: "Test your knowledge of Medieval Europe! Explore kings, knights, castles, battles, and the social and cultural life of the Middle Ages.",
     quiz: [
@@ -848,6 +855,7 @@ export default {
     ]
 },
 RenaissanceEurope : {
+    id  : 9,
     title: "European Renaissance Quiz",
     description: "Test your knowledge of the Renaissance! Explore art, science, exploration, and influential figures who shaped Europe between the 14th and 17th centuries.",
     quiz: [
@@ -953,6 +961,7 @@ RenaissanceEurope : {
         }
     ]
 },FrenchRevolution : {
+    id  : 10,
     title: "French Revolution Quiz",
     description: "Test your knowledge of the French Revolution! Explore key events, figures, and ideas that shaped France from 1789 to the early 19th century.",
     quiz: [
@@ -1058,6 +1067,7 @@ RenaissanceEurope : {
         }
     ]
 },WorldWars : {
+    id  : 11,
     title: "World Wars Quiz",
     description: "Test your knowledge on the First and Second World Wars! Explore major events, battles, leaders, and outcomes that shaped the 20th century.",
     quiz: [
@@ -1164,6 +1174,7 @@ RenaissanceEurope : {
     ]
 },
 MongolEmpire : {
+    id  : 12,
     title: "Mongol Empire Quiz",
     description: "Explore the vast Mongol Empire! Test your knowledge about Genghis Khan, his successors, major battles, culture, and the empire's expansion across Asia and Europe.",
     quiz: [
@@ -1269,6 +1280,7 @@ MongolEmpire : {
         }
     ]
 },PrecolumbianCivilizations : {
+    id  : 13,
     title: "Pre-Columbian Civilizations Quiz",
     description: "Test your knowledge on ancient civilizations of the Americas, including the Maya, Aztec, and Inca. Explore their culture, leaders, achievements, and mysteries.",
     quiz: [
@@ -1374,6 +1386,7 @@ MongolEmpire : {
         }
     ]
 },ExplorersDiscoveries : {
+    id  : 14,
     title: "Explorers and Discoveries Quiz",
     description: "Test your knowledge on famous explorers and their discoveries, from the Age of Exploration to early global navigation. Learn about the voyages, discoveries, and impacts on world history.",
     quiz: [
@@ -1479,6 +1492,7 @@ MongolEmpire : {
         }
     ]
 },AncientMiddleEast : {
+    id  : 15,
     title: "Ancient Middle East Quiz",
     description: "Test your knowledge of the civilizations, empires, and key figures of the ancient Middle East, including Mesopotamia, Egypt, Persia, and the Levant.",
     quiz: [
@@ -1585,6 +1599,7 @@ MongolEmpire : {
     ]
 },
 ImperialChina : {
+    id  : 16,
     title: "Imperial China Quiz",
     description: "Test your knowledge of Imperial China, covering dynasties, emperors, inventions, philosophy, and major historical events.",
     quiz: [
@@ -1691,6 +1706,7 @@ ImperialChina : {
     ]
 },
 AncientNumidia : {
+    id  : 17,
     title: "Ancient Numidia Quiz",
     description: "Explore the history of Ancient Numidia, its kings, warriors, culture, and role in the Mediterranean world.",
     quiz: [
@@ -1797,6 +1813,7 @@ AncientNumidia : {
     ]
 },
 PhoeniciansCarthage : {
+    id  : 18,
     title: "Phoenicians and Carthage Quiz",
     description: "Test your knowledge about the Phoenicians, their maritime empire, trade networks, culture, and the rise and fall of Carthage.",
     quiz: [
@@ -1903,6 +1920,7 @@ PhoeniciansCarthage : {
     ]
 },
 MediterraneanAntique : {
+    id  : 19,
     title: "Ancient Mediterranean Quiz",
     description: "Explore the ancient civilizations of the Mediterranean: Greeks, Romans, Phoenicians, Egyptians, and more. Test your knowledge on culture, history, and epic events that shaped the ancient world.",
     quiz: [

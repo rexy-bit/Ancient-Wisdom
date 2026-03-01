@@ -1,53 +1,56 @@
-
-
 const ApiKey = import.meta.env.VITE_API_KEY;
 
+export const askAi = async (userPrompt) => {
+  const prompt = `You are HermesAI, an AI assistant designed to help users explore history, literature, and movies through the lens of Ancient Wisdom.
 
+Your role:
+- Provide accurate explanations and summaries
+- Give insights about historical figures, books, movies
+- Provide quotes and lessons related to wisdom
+- Always stay concise and factual
 
-export const askAi = async(userPrompt) => {
+Question: ${userPrompt}`;
 
-
-
- 
-     const requestBody = {
-        contents: [
-            {
-                parts: [
-                    {
-                        text: `You are HermesAI, an AI assistant designed to help users explore history, literature, and movies through the lens of Ancient Wisdom. Your role is to provide accurate explanations, summaries, and insights about historical figures, events, books, and films. You can also provide relevant quotes, lessons, and connections to the theme of wisdom. Users may ask you factual questions, request recommendations, or seek context and interpretation for historical content. Always give clear, concise, and historically accurate answers, and indicate when information might be speculative or influenced by dramatization in media.
-                        
-                        Question : ${userPrompt}`,
-
-
-         
-                    }
-                ]
-            }
-        ]
-    };
-
-const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${ApiKey}`;
-
-   
-
-   try{
-    const resp = await fetch(url, {
-        method : 'POST',
-        headers : {
-            'Content-Type' : 'application/json'
+  try {
+    const response = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent",
+      {
+        method: "POST",
+        headers: {
+          "x-goog-api-key": ApiKey,
+          "Content-Type": "application/json",
         },
-        body : JSON.stringify(requestBody)
-    });
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [{ text: prompt }],
+            },
+          ],
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 2048,
+          },
+        }),
+      }
+    );
 
-    const data = await resp.json();
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
+    }
 
-    console.log("Gemini Response : ", data);
-    const AiAnswer = data.candidates[0].content.parts[0].text;
+    const data = await response.json();
+    console.log("Gemini Response:", data);
 
-    if(!AiAnswer) throw new Error("No response, try again");
+    const text =
+      data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
-    return AiAnswer;
-   }catch(err){
-      console.error('Error : ', err);
-   }
-}
+    if (!text) {
+      throw new Error("No response from AI");
+    }
+
+    return text;
+  } catch (err) {
+    console.error("AI Error:", err);
+    return "⚠️ Error getting AI response. Please try again.";
+  }
+};

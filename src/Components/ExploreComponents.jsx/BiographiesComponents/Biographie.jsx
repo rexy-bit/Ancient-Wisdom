@@ -1,24 +1,40 @@
 import { memo } from "react";
 import { useBiographieContext } from "../../../Context/BiographieContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import Biographies from "./Biographies"
 const Biographie = () => {
 
-    const {biographie} = useBiographieContext();
+    const [currentBiographie, setCurrentBiographie] = useState(null);
+   
     const navigate = useNavigate();
 
+    const {id} = useParams();
+
+    useEffect(()=>{
+        const findBiographie = Biographies.find((b)=>b.id === Number(id));
+
+        if(findBiographie){
+            setCurrentBiographie(findBiographie);
+        }
+    }, [id]);
+
+
+
     return(
-     biographie === null ? <h1 className="mt-20 text-[1.5em] text-center">No biographie found</h1> : 
+     currentBiographie === null ? <h1 className="mt-20 text-[1.5em] text-center">No biographie found</h1> : 
 
         <section className="flex flex-col justify-center items-center mt-20 relative fade-in">
-            <h1 className="text-[1.5em] font-bold underline w-[300px] text-center mt-5">Biographie of {biographie.name}</h1>
+            <h1 className="text-[1.5em] font-bold underline w-[300px] text-center mt-5">Biographie of {currentBiographie.name}</h1>
 
-              <img src={biographie.image} alt={biographie.name} className="w-[200px] h-[300px] object-cover rounded-[5px] mt-10"/>
+              <img src={currentBiographie.image} alt={currentBiographie.name} className="w-[200px] h-[300px] object-cover rounded-[5px] mt-10"/>
             <div className="flex flex-col justify-center items-center w-[800px] gap-5 mt-10 mb-20 max-[900px]:w-[500px] max-[550px]:w-[300px]">
-                {biographie.biographie.map((section)=>{
+                {currentBiographie.biographie.map((section)=>{
                     return(
                         <div>
-                        <h2 className="text-[1.2em] font-black max-[550px]:text-[0.9em]">{section.title}</h2>
-                        <div className="max-[550px]:text-[0.8em]">{section.content}</div>
+                        <h2 className="text-[1.2em] font-black ">{section.title}</h2>
+                        <div className="text-[17px] font-sans">{section.content}</div>
                         </div>
                     )
                 })}

@@ -27,7 +27,7 @@ const HistoricalMain = () => {
                 <div className="flex flex-col justify-center items-center gap-3 mt-4 mb-15">
                     {historicalEvents.map((event)=>{
                         return(
-                            <Link key={event.id} onClick={()=> setEvent(event)} to="/event">
+                            <Link key={event.id} to={`/event/${event.id}`}>
                                <button className="w-[300px] px-1 h-[55px] bg-[#A8A8A8] rounded-lg shadow-amber-900 cursor-pointer transition-transform duration-300 hover:scale-110 active:scale-105 leading-4">
                                   {event.name}
                                </button>

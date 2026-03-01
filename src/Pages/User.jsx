@@ -13,7 +13,7 @@ export const User = () => {
   if (loading) return <p>Chargement...</p>;
 
   return user ? (
-    <section className="flex flex-col w-full justify-center items-center fade-in min-h-screen">
+    <section className="flex flex-col w-full  items-center fade-in min-h-screen">
       <Header />
         {userData && <h1 className="text-[1.3em] font-bold text-center mt-10">Welcome {userData.nom}</h1>}
         {userData ? (
