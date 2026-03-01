@@ -7,15 +7,12 @@ import { useQuotesContext } from "../Context/QuotesContext";
 export const CardActive = () =>{
 
     const {isFavorite, toggleFavorite} = useFavoritesContext();
-    const [myCard, setMyCard] = useState(()=>{
-        const saved = localStorage.getItem('myCard');
-
-        return saved ? JSON.parse(saved) : null;
-    });
-
+    const [myCard, setMyCard] = useState(null);
+{/*
     useEffect(()=>{
         localStorage.setItem('myCard', JSON.stringify(myCard));
     }, [myCard]);
+    */}
 
     const {quotes} = useQuotesContext();
 
@@ -36,12 +33,14 @@ export const CardActive = () =>{
 
     useEffect(()=>{
        findCard();
-    }, [id]);
+    }, [id, quotes]);
 
     
 
 
     return(
+        !myCard ? <h1 className="text-center text-[1.1em] mt-10 font-[500]">Quote Not found</h1>:
+        
         <section className="flex  items-center fade-in flex-col min-h-screen">
 
                  <h1 className=" mt-15 text-[1.5em] font-black underline w-[250px] text-center">Quote of : {myCard.author}</h1>
