@@ -57,9 +57,7 @@ export const CardActive = () =>{
                 <p className="text-[14px] font-bold mt-2">Source : {myCard.origin}</p>
                 <p className="text-[14px] font-bold">Era : {myCard.era}</p>
             </div>
-               <button style={{color : isFavorite(myCard.id) ? "red" : "gray"}} onClick={()=>{
-                
-               
+               <button style={{color : isFavorite(myCard.id) ? "red" : "gray"}} onClick={()=>{  
                 toggleFavorite(myCard.id);
                 
             
